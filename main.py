@@ -14,7 +14,7 @@ import re
 
 @st.cache_resource
 def create_session():
-    return Session.builder.configs(st.secrets.connections.snowpark).create()
+    return Session.builder.configs(st.secrets["connections.snowpark"]).create()
 
 session = create_session()
 st.success("Connected to Snowflake!")
